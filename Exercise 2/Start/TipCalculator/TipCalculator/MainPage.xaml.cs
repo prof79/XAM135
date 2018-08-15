@@ -1,4 +1,6 @@
-﻿using System;
+﻿// MainPage.xaml.cs
+
+using System;
 using Xamarin.Forms;
 
 namespace TipCalculator
@@ -16,14 +18,17 @@ namespace TipCalculator
 			tipPercentSlider.ValueChanged += (s, e) =>
 			{
 				double pct = Math.Round(e.NewValue);
+
 				tipPercent.Text = pct + "%";
-				CalculateTip(false, false);
+
+                CalculateTip(false, false);
 			};
 		}
 
 		void CalculateTip(bool roundUp, bool roundDown)
 		{
 			double t;
+
 			if (Double.TryParse(billInput.Text, out t) && t > 0)
 			{
 				double pct = Math.Round(tipPercentSlider.Value);
@@ -48,6 +53,7 @@ namespace TipCalculator
 		}
 
 		void OnNormalTip  (object sender, EventArgs e) { tipPercentSlider.Value = 15; }
+
 		void OnGenerousTip(object sender, EventArgs e) { tipPercentSlider.Value = 20; }
 	}
 }
