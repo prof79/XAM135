@@ -1,4 +1,6 @@
-﻿using System;
+﻿// MainPage.xaml.cs
+
+using System;
 using Xamarin.Forms;
 
 namespace Alignment
